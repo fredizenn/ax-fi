@@ -1,0 +1,1 @@
+<div class="bg-white py-16 sm:py-24 text-center lg:py-32">Hello</div>
