@@ -29,10 +29,10 @@
 			</NavBrand>
 			<NavHamburger />
 			<NavUl {activeUrl}>
-				<NavLi href="/about">About</NavLi>
-				<NavLi href="/docs/components/accordion">Browse Services</NavLi>
-				<NavLi href="/docs/components/alert">Track Application Status</NavLi>
-				<NavLi href="/docs/components/avatar">Feedback</NavLi>
+				<NavLi href="#">About</NavLi>
+				<NavLi href="#">Browse Services</NavLi>
+				<NavLi href="#">Track Application Status</NavLi>
+				<NavLi href="#">Feedback</NavLi>
 			</NavUl>
 		</div>
 		<div class="hidden md:flex items-center text-sm gap-x-4">	

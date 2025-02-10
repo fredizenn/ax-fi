@@ -7,7 +7,6 @@
 	import { activePage, breadCrumb } from '$data/appStore';
 	import { menuItems } from '$data/userStore';
 	import { logout, userInfo } from '$svc/auth';
-	import Dialog from '$lib/components/ui/dialog.svelte';
 
 	$: activeBreadCrumb = $breadCrumb[$breadCrumb.length - 1].title;
 	let hideSidebar = false;
