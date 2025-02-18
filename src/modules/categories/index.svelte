@@ -3,14 +3,22 @@
 	export let title = 'Money and Finance';
 	export let description = 'Income, Personal, Corporate Taxes';
 	export let buttonText = 'Learn more';
+
+	export let filter: 'Individual' | 'Business' = 'Individual';
 	// export let imageUrl = "/path/to/your/image.jpg";
 </script>
 
 <div class="">
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl lg:max-w-none">
-			<h2 class="text-2xl font-bold text-gray-900">Categories</h2>
-			<div class="bg-white pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32">
+			<div class="w-full flex items-center justify-between">
+				<h2 class="text-2xl font-bold text-gray-900">Categories</h2>
+				<a href="#" class="text-sm/6 font-medium text-black"
+						>View all<span aria-hidden="true">→</span></a
+					>
+			</div>
+			
+			<!-- <div class="bg-white pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32">
 				<div class="bg-gray-900 pb-20 sm:pb-24 xl:pb-0">
 				  <div class="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
 					<div class="-mt-8 w-full max-w-2xl xl:-mb-8 xl:w-96 xl:flex-none">
@@ -35,16 +43,16 @@
 					</div>
 				  </div>
 				</div>
-			  </div>
+			  </div> -->
 			  
 			<div
 				class="mt-6 divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0"
 			>
 				<div
-					class="group relative rounded-tl-lg rounded-tr-lg bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-tr-none"
+					class="hover:bg-slate-100 transition-all duration-200 group relative rounded-tl-lg rounded-tr-lg bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-tr-none"
 				>
 					
-					<div class="mt-8">
+					<div class="mt-8 ">
 						<h3 class="text-base font-semibold text-gray-900">
 							<a href="#" class="focus:outline-none">
 								<!-- Extend touch target to entire panel -->
@@ -60,13 +68,13 @@
 					
 				</div>
 				<div
-					class="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-tr-lg"
+					class="hover:bg-slate-100 transition-all duration-200 group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-tr-lg"
 				>
 					
 					<div class="mt-8">
+						{#if filter === 'Individual'}
 						<h3 class="text-base font-semibold text-gray-900">
 							<a href="#" class="focus:outline-none">
-								<!-- Extend touch target to entire panel -->
 								<span class="absolute inset-0" aria-hidden="true"></span>
 								Births, Deaths &amp; Marriages
 							</a>
@@ -75,11 +83,22 @@
 							Request official documentation of major life events, including records of births,
 							deaths, marriages, and divorces.
 						</p>
+						{:else}
+						<div class="text-base font-semibold text-gray-900">
+							<a href="#" class="focus:outline-none">
+								<span class="absolute inset-0" aria-hidden="true"></span>
+								Transportation
+							</a>
+						</div>
+						<p class="mt-2 text-sm text-gray-500">
+							Obtain Driver's License, Vehicle Registration, and Road Worthy Certificates.
+						</p>
+						{/if}
 					</div>
 					
 				</div>
 				<div
-					class="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
+					class="hover:bg-slate-100 transition-all duration-200 group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
 				>
 					
 					<div class="mt-8">
@@ -98,7 +117,7 @@
 					
 				</div>
 				<div
-					class="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
+					class="hover:bg-slate-100 transition-all duration-200 group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
 				>
 					
 					<div class="mt-8">
@@ -117,7 +136,7 @@
 					
 				</div>
 				<div
-					class="group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-bl-lg"
+					class="hover:bg-slate-100 transition-all duration-200 group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-bl-lg"
 				>
 					
 					<div class="mt-8">
@@ -136,7 +155,7 @@
 				
 				</div>
 				<div
-					class="group relative rounded-bl-lg rounded-br-lg bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-bl-none"
+					class="hover:bg-slate-100 transition-all duration-200 group relative rounded-bl-lg rounded-br-lg bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-bl-none"
 				>
 					
 					<div class="mt-8">

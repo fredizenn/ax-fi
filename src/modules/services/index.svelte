@@ -3,6 +3,8 @@
 	import passport from '$static/assets/ghana-passport.jpeg';
 	import gis from '$static/assets/gis.jpg';
 	import gis2 from '$static/assets/gis2.jpg';
+
+	export let filter: 'Individual' | 'Business' = 'Individual';
 </script>
 
 <!-- <div class="">
@@ -60,67 +62,39 @@
 			Popular Services
 		</p>
 	</div>
-	<p
-		class="mx-auto mt-6 max-w-2xl text-pretty text-center text-gray-600"
-	>
+	<p class="mx-auto mt-6 max-w-2xl text-pretty text-center text-gray-600">
 		Explore our most frequently accessed government services. Here you'll find direct links to
 		essential institutions like the Ghana Revenue Authority for tax matters, the Passport Office for
 		travel documentation, and Ghana Immigration for citizenship and visa services - all designed to
 		streamline your interaction with key government agencies.
 	</p>
 	<div
-		class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2"
+		class="mx-auto mt-16 grid max-w-xl grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-5xl lg:grid-cols-3"
 	>
 		<div
-			class="rounded-3xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none"
+			class="rounded-3xl rounded-t-3xl bg-gray-900 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none"
 		>
-			<h3 id="tier-hobby" class="text-base/7 font-semibold text-black">Passport Office</h3>
-			<!-- <p class="mt-4 flex items-baseline gap-x-2">
-				<span class="text-5xl font-semibold tracking-tight text-gray-900">$29</span>
-				<span class="text-base text-gray-500">/month</span>
-			</p> -->
-			<p class="mt-6 text-base/7 text-gray-600">
-				The Passports Office, a bureau of the Ministry is responsible for the issue of passports and other travel documents of Ghana to Ghanaian Citizens.
-			</p>
-			<ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10">
-				<!-- <li class="flex gap-x-3">
-					<svg
-						class="h-6 w-5 flex-none text-indigo-600"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						aria-hidden="true"
-						data-slot="icon"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-					Apply for a travel passport
-				</li> -->
-				<!-- <li class="flex gap-x-3">
-					<svg
-						class="h-6 w-5 flex-none text-indigo-600"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						aria-hidden="true"
-						data-slot="icon"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-					Up to 10,000 subscribers
-				</li> -->
-				
-			</ul>
+			{#if filter === 'Individual'}
+				<h3 id="tier-hobby" class="text-base/7 font-semibold text-white">Passport Office</h3>
+
+				<p class="mt-6 text-sm/6 text-gray-300">
+					The Passports Office, a bureau of the Ministry is responsible for the issue of passports
+					and other travel documents of Ghana to Ghanaian Citizens.
+				</p>
+			{:else}
+				<h3 id="tier-hobby" class="text-base/7 font-semibold text-white">
+					Office of The Registrat Of Companies
+				</h3>
+
+				<p class="mt-6 text-sm/6 text-gray-300">
+					The ORC is a statutory entity entrusted with the registration of all types of businesses
+					and provision of advisory services.
+				</p>
+			{/if}
 			<a
 				href="#"
 				aria-describedby="tier-hobby"
-				class="mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10"
+				class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10"
 				>Dive in &rarr;</a
 			>
 		</div>
@@ -128,13 +102,8 @@
 			<h3 id="tier-enterprise" class="text-base/7 font-semibold text-white">
 				Ghana Revenue Authority
 			</h3>
-			<!-- <p class="mt-4 flex items-baseline gap-x-2">
-				<span class="text-5xl font-semibold tracking-tight text-white">$99</span>
-				<span class="text-base text-gray-400">/month</span>
-			</p> -->
-			<p class="mt-6 text-base/7 text-gray-300">
-				File and Pay Taxes
-			</p>
+
+			<p class="mt-6 text-base/7 text-gray-300">File and Pay Taxes</p>
 			<ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
 				<li class="flex gap-x-3">
 					<svg
@@ -200,12 +169,41 @@
 					</svg>
 					Customs Duty
 				</li>
-				
 			</ul>
 			<a
-				href="#"
+				href="/services/gra"
 				aria-describedby="tier-enterprise"
 				class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10"
+				>Dive in &rarr;</a
+			>
+		</div>
+		<div
+			class="rounded-3xl rounded-t-3xl bg-gray-900 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-br-3xl lg:rounded-tl-none"
+		>
+			{#if filter === 'Individual'}
+				<h3 id="tier-hobby" class="text-base/7 font-semibold text-white">
+					Ghana Immigration Service
+				</h3>
+
+				<p class="mt-6 text-sm/6 text-gray-300">
+					The Ghana Immigration Service (GIS) is a government agency that regulates the entry,
+					residence, and exit of foreigners in Ghana. It is part of the Ministry of the Interior.
+				</p>
+			{:else}
+				<h3 id="tier-hobby" class="text-base/7 font-semibold text-white">
+					Food and Drugs Authority
+				</h3>
+
+				<p class="mt-6 text-sm/6 text-gray-300">
+					The Food and Drugs Authority (FDA) is responsible for providing and enforcing standards
+					for the manufacture, import, export, sale and distribution of food and drug products.
+				</p>
+			{/if}
+
+			<a
+				href="#"
+				aria-describedby="tier-hobby"
+				class="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10"
 				>Dive in &rarr;</a
 			>
 		</div>
