@@ -13,7 +13,7 @@
 		<div class="mx-auto max-w-2xl lg:max-w-none">
 			<div class="w-full flex items-center justify-between">
 				<h2 class="text-2xl font-bold text-gray-900">Categories</h2>
-				<a href="#" class="text-sm/6 font-medium text-black"
+				<a href="/services" class="text-sm/6 font-medium text-black"
 						>View all<span aria-hidden="true">→</span></a
 					>
 			</div>

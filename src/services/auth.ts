@@ -121,10 +121,22 @@ export function init() {
 	// 	});
 }
 
-export function login() {
+export function login(data: any) {
+	return data
 	// if (initialized) keycloak.login();
 }
 
+export async function signUp(data: any) {
+	return data
+}
+
+export async function verifyPhoneNumber(otp: string) {
+	return otp
+}
+
+export async function extractGhanaCardDetails (ghanaCardNumber: string) {
+	return ghanaCardNumber
+}
 export function refreshToken() {
 	// if (!initialized) return;
 	// keycloak.updateToken(30).then((refreshed: boolean) => {

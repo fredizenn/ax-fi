@@ -1,17 +1,26 @@
 <script lang="ts">
 	import coa from '$static/assets/coa.svg';
-	import { Button } from 'flowbite-svelte';
 	import Form from '$lib/components/forms/form.svelte';
 	import TextField from '$lib/components/forms/textField.svelte';
 	import { z } from 'zod';
 	import Icon from '@iconify/svelte';
 	import Verification from './verification.svelte';
 	import GhanaCard from './ghanaCard.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import { signUp } from '$svc/auth';
 
 	export let isValid = false;
 	let activePage = 0;
-	const submit = () => {
-		activePage += 1;
+	let loading = false;
+	const submit = async ({ detail }: any) => {
+		loading = true
+		setTimeout(async () => {
+			await signUp(detail.values);
+			initialValues = detail.values;
+			activePage += 1;
+			loading = false;
+		}, 2000);
+
 		return true;
 	};
 	let form: any;
@@ -43,7 +52,9 @@
 </script>
 
 {#if activePage === 0}
-	<div class="mx-auto flex max-w-4xl flex-col justify-center rounded px-6 py-12 shadow lg:px-8">
+	<div
+		class="mx-auto my-10 flex w-full flex-col justify-center rounded px-6 py-12 shadow sm:max-w-3xl lg:px-8"
+	>
 		<div class="sm:mx-auto sm:w-full sm:max-w-sm">
 			<img class="mx-auto h-24 w-auto" src={coa} alt="Your Company" />
 			<h2 class="mt-2 text-center text-2xl/9 font-medium tracking-tight text-gray-900">
@@ -51,9 +62,9 @@
 			</h2>
 		</div>
 
-		<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-2xl">
+		<div class="mt-6 sm:mx-auto sm:w-full sm:max-w-2xl">
 			<Form {schema} init={initialValues} on:change={onChange} on:submit={submit}>
-				<div class="grid-cols-2 gap-x-4 gap-y-8 md:grid">
+				<div class="grid-cols-2 gap-x-4 md:grid">
 					<TextField showLabel label="First Name" name="firstName" required />
 					<TextField showLabel label="Last Name" name="lastName" required />
 					<TextField showLabel label="Other Names" name="otherNames" />
@@ -63,8 +74,11 @@
 				</div>
 				<div>
 					<Button
+						disabled={loading}
+						busy={loading}
 						type="submit"
-						class="mt-10 flex w-full justify-center rounded-md bg-green-800 py-3">Proceed</Button
+						otherClasses="mt-4 flex w-full justify-center rounded-md text-white hover:bg-green-700 bg-green-800 py-2"
+						>Proceed</Button
 					>
 				</div>
 			</Form>
@@ -72,9 +86,8 @@
 			<div class=" py-6 text-center text-sm font-medium">OR</div>
 			<Button
 				on:click={() => (activePage = 2)}
-				color="alternative"
 				type="button"
-				class="mx-auto flex items-center justify-center"
+				otherClasses="mx-auto flex items-center justify-center"
 			>
 				Sign Up with Ghana Card <Icon icon="openmoji:flag-ghana" class="ml-2 h-7 w-7" />
 			</Button>

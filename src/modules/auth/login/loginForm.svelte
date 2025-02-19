@@ -1,67 +1,61 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
+	import { goto } from '$app/navigation';
+	import Form from '$lib/components/forms/form.svelte';
+	import TextField from '$lib/components/forms/textField.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import { login } from '$svc/auth';
+	// import { Button } from 'flowbite-svelte';
+	import { z } from 'zod';
 
-    export let signInWithEmail = true;
+	export let signInWithEmail = true;
+    export let loading = false;
+	const init = {
+		phoneNumber: '',
+		applicationNumber: ''
+	};
 
-    // function subm
+	const schema = z.object({
+		email: z.string().min(1, 'Required'),
+		password: z.string().min(1, 'Required')
+	});
+
+    const altSchema = z.object({
+		phoneNumber: z.string().min(1, 'Required'),
+		password: z.string().min(1, 'Required')
+	});
+
+	const submit = async ({ detail }: any) => {
+        loading = true
+        setTimeout(() => {
+            login({detail})
+            goto('/dashboard')
+            loading = false
+
+        }, 2000)
+		return true;
+	};
+	// function subm
 </script>
 
-<form class="space-y-6" action="#" method="POST">
-    {#if signInWithEmail}
-    <div>
-        <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
-        <div class="mt-2">
-            <input
-                type="email"
-                name="email"
-                id="email"
-                autocomplete="email"
-                required
-                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-            />
-        </div>
-    </div>
-    {:else}
-    <div>
-        <label for="phoneNumber" class="block text-sm/6 font-medium text-gray-900">Phone number</label>
-        <div class="mt-2">
-            <input
-                type="text"
-                name="phoneNumber"
-                required
-                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-            />
-        </div>
-    </div>
-    {/if}
-
-    <div>
-        <div class="flex items-center justify-between">
-            <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
-            <div class="text-sm">
-                <a href="#" class="text-xs font-medium text-indigo-600 hover:text-indigo-500"
-                    >Forgot password?</a
-                >
-            </div>
-        </div>
-        <div class="mt-2">
-            <input
-                type="password"
-                name="password"
-                id="password"
-                autocomplete="current-password"
-                required
-                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-            />
-        </div>
-    </div>
-
-    <div>
-        <button
-            on:click={() => goto('/dashboard')}
-            type="submit"
-            class="flex w-full justify-center rounded-md bg-green-800 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >Sign in</button
-        >
-    </div>
-</form>
+<Form schema={signInWithEmail ? schema : altSchema} {init} on:submit={submit}>
+	<div class="grid-cols-1 gap-x-4 gap-y-0 md:grid">
+		{#if signInWithEmail}
+			<TextField showLabel label="Email" name="email" required />
+		{:else}
+			<TextField showLabel label="Phone Number" name="phoneNumber" required />
+		{/if}
+		<div class="w-full">
+			<div class="text-right text-sm">
+				<button type="button" class="text-xs font-medium text-indigo-600 hover:text-indigo-500"
+					>Forgot password?</button
+				>
+			</div>
+			<TextField type="password" showLabel label="Password" name="password" required />
+		</div>
+	</div>
+	<div>
+		<Button disabled={loading} busy={loading} type="submit" otherClasses="mt-6 flex w-full text-white justify-center hover:bg-green-700 rounded-md bg-green-800 py-2"
+			>Sign in</Button
+		>
+	</div>
+</Form>

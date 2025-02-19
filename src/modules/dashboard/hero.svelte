@@ -46,31 +46,8 @@ import coa from '$static/assets/coa.svg';
     <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-10">
         <div class="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
             <!-- <img class="h-11" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
-            <div class="mt-24 sm:mt-32 lg:mt-16">
-                <a href="#" class="inline-flex space-x-6">
-                    <span
-                        class="rounded-full bg-gray-500/10 px-3 py-1 text-sm/6  text-gray-300 ring-1 ring-inset ring-gray-500/20"
-                        >What's new</span
-                    >
-                    <span class="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
-                        <span>Just shipped v1.0</span>
-                        <svg
-                            class="size-5"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            data-slot="icon"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
-                    </span>
-                </a>
-            </div>
-            <h1 class="mt-10 text-pretty text-white text-xl font-semibold tracking-tight sm:text-3xl">
+            
+            <h1 class="mt-24 sm:mt-32 lg:mt-16 text-pretty text-white text-xl font-semibold tracking-tight sm:text-3xl">
                 Your Gateway to Ghana's E-Services and Payment Solutions
             </h1>
             <p class="mt-8 text-pretty text-gray-300">
@@ -81,11 +58,11 @@ import coa from '$static/assets/coa.svg';
             </p>
             <div class="mt-10 flex items-center gap-x-6">
                 <a
-                    href="#"
+                    href="/auth/signup"
                     class="rounded-sm bg-gray-100 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                     >Get started</a
                 >
-                <a href="#" class="text-sm/6 font-medium text-white"
+                <a href="/about" class="text-sm/6 font-medium text-white"
                     >Learn more <span aria-hidden="true">→</span></a
                 >
             </div>

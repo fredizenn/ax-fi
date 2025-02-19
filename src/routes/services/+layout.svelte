@@ -12,9 +12,10 @@
 	import backdrop from '$static/assets/boat.jpg';
 	import gra_logo from '$static/assets/gra-logo.webp';
 	import arch from '$static/assets/gh-arch.jpg';
-	import { Banner, Button, ImagePlaceholder, Modal, Skeleton } from 'flowbite-svelte';
-	import SlideOver from '$lib/components/layout/slideOver.svelte';
+	import { Banner, Button, Checkbox, Dropdown, ImagePlaceholder, Modal, Search, Skeleton } from 'flowbite-svelte';
 	let options: any = [];
+
+	
 
 	const dispatch = createEventDispatcher();
 
@@ -33,6 +34,7 @@
 	</div>
 
 </div>
+
 
 <div class="bg-white py-10">
 	<div class="mx-auto px-2 sm:px-40">

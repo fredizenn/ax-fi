@@ -10,6 +10,7 @@
 
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import Icon from '@iconify/svelte';
 
 	export let label = '';
 	export let type: 'submit' | 'button' | 'reset' = 'button';
@@ -26,7 +27,7 @@
 	disabled={disabled || busy}
 	{type}
 	class={cn(
-		` rounded-[5px] px-4 py-2 ${kind[color]} disabled:bg-gray-300 disabled:text-gray-400`,
+		` rounded-[5px] text-sm px-4 py-2 ${kind[color]} disabled:bg-gray-400 disabled:text-gray-200`,
 		otherClasses
 	)}
 	on:click
@@ -37,7 +38,7 @@
 		{/if}
 		{label}
 		{#if busy}
-			<iconify-icon icon="svg-spinners:180-ring-with-bg" class="text-green-500" />
+			<Icon icon="svg-spinners:180-ring-with-bg" class="text-black" />
 		{/if}
 		{#if trailingIcon}
 			<iconify-icon icon={trailingIcon} />

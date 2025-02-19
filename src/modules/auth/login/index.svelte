@@ -10,10 +10,10 @@
 	let isSignUp = false;
 </script>
 
-<div class="flex flex-col justify-center px-6 py-12 lg:px-8">
+<div class="mx-auto flex w-full sm:max-w-lg flex-col justify-center rounded px-6 py-10 my-10 shadow lg:px-8">
 	<div class="sm:mx-auto sm:w-full sm:max-w-sm">
 		<img class="mx-auto h-24 w-auto" src={coa} alt="Your Company" />
-		<h2 class="mt-6 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+		<h2 class="mt-2 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
 			{#if !isSignUp}Sign in to your account{:else}Get registered now{/if}
 		</h2>
 	</div>

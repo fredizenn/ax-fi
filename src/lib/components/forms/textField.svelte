@@ -70,9 +70,12 @@
 
 	<!-- <input class="rounded-md p-2 border-gray-300 border bg-white {otherClasses}" {name} {required} {readonly} {placeholder} on:change={onChange} {...$$restProps}/> -->
 	<!-- <input class="rounded-md p-2 border-gray-300 border bg-white {otherClasses}" bind:value={$data[name]} {name} {required} {readonly} {placeholder} on:change={onChange} {...$$restProps}/> -->
-	{#if hasError}
+	<div class="min-h-8">
+		{#if hasError}
 		<!-- <label class="label" for={id} in:fade out:fade> -->
 		<span class="label-text-alt text-xs text-red-600" in:fade out:fade>{error}</span>
 		<!-- </label> -->
 	{/if}
+	</div>
+	
 </div>
