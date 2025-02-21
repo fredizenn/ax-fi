@@ -34,7 +34,7 @@
 >
 	<div class="flex items-center gap-1.5 justify-center whitespace-nowrap">
 		{#if leadingIcon}
-			<iconify-icon icon={leadingIcon} />
+			<Icon icon={leadingIcon} class="w-5 h-5" />
 		{/if}
 		{label}
 		{#if busy}

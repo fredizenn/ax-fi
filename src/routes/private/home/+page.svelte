@@ -1,6 +1,6 @@
 <script>
 	import { activePage } from '$data/appStore';
-	import Dashboard from '$modules/dashboard/index.svelte';
+	import Dashboard from '$modules/homePage/index.svelte';
 
 	$activePage = {
 		title: 'Home',

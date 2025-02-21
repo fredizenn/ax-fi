@@ -5,8 +5,8 @@
 	import Services from '$modules/services/index.svelte';
 	import { Button, ButtonGroup, Dropdown, DropdownItem, Radio, Search } from 'flowbite-svelte';
 	import Categories from '$modules/categories/index.svelte';
-	import Hero from '$modules/dashboard/hero.svelte';
-	import LandingPageRadio from '$modules/dashboard/landingPageRadio.svelte';
+	import Hero from '$modules/homePage/hero.svelte';
+	import LandingPageRadio from '$modules/homePage/landingPageRadio.svelte';
 	// if ($isAuthenticated) {
 	// 	goto(`/private`);
 	// } else {

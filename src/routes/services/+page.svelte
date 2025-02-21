@@ -31,13 +31,12 @@
 			<Radio value={t.name} bind:group={currentFilter}>{t.name}</Radio>
 		</li>
 	{/each}
-	<a
+	<div
 		slot="footer"
-		href="/"
 		class="-mb-1 flex items-center bg-gray-50 justify-center p-3 text-center text-xs font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-700"
 	>
     Check option to search by
-    <Icon icon="gridicons:help-outline" class="ml-1 w-5 h-5" />	</a>
+    <Icon icon="gridicons:help-outline" class="ml-1 w-5 h-5" />	</div>
 </Dropdown>
 </div>
 

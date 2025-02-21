@@ -1,63 +1,78 @@
 export const individualServices = [
     {
       title: "Births, Deaths & Marriages",
+      path: '#',
       description: "Request official documentation of major life events, including records of births, deaths, marriages, and divorces"
     },
     {
       title: "Business Registrations and Permits",
+      path: '#',
       description: "Managing legal requirements for establishing and operating a company, including business registration and maintaining necessary documentation and licenses"
     },
     {
       title: "Citizenship and Passports",
+      path: '#',
       description: "Obtain official identification and travel documents"
     },
     {
       title: "Transportation",
+      path: '#',
       description: "Obtain Driver's License, Vehicle Registration, and Road Worthy Certificates"
     },
     {
       title: "Education, Science and Technology",
+      path: '#',
       description: "Access educational funding and institutional licensing"
     },
     {
       title: "Energy and Petroleum",
+      path: '#',
       description: "Request official documents, permits, and utility connections including certifications and electrical service authorization"
     },
     {
       title: "Environment",
+      path: '#',
       description: "Access environmental protection and waste management services"
     },
     {
       title: "Health and Food Services",
+      path: '#',
       description: "Healthcare services and regulatory standards for food, medicine, and pharmaceutical products"
     },
     {
       title: "Housing, Land and Local Services",
+      path: '#',
       description: "Handle property registration and tenancy matters"
     },
     {
       title: "Money and Finance",
+      path: '#',
       description: "Manage various tax obligations"
     },
     
     {
       title: "Police, Justice and Safety",
+      path: '#',
       description: "Contact law enforcement agencies, initiate legal proceedings, or get in touch with security services"
     },
     {
       title: "Social Services and Welfare",
+      path: '#',
       description: "Encompasses government assistance programs and support initiatives provided by the Government of Ghana"
     },
     {
       title: "Visas and Immigration",
+      path: '#',
       description: "Handle residence and work permits"
     },
     {
       title: "Working, Employment and Pensions",
+      path: '#',
       description: "Manage retirement benefits"
     },
     {
         title: "Other",
+        path: '#',
         description: "Access additional government services"
       },
   ]
@@ -66,56 +81,69 @@ export const businessServices = [
     
     {
       title: "Business Registrations and Permits",
+      path: '#',
       description: "Managing legal requirements for establishing and operating a company, including business registration and maintaining necessary documentation and licenses"
     },
     
     {
       title: "Transportation",
+      path: '#',
       description: "Obtain Driver's License, Vehicle Registration, and Road Worthy Certificates"
     },
     {
       title: "Education, Science and Technology",
+      path: '#',
       description: "Access educational funding and institutional licensing"
     },
     {
       title: "Energy and Petroleum",
+      path: '#',
       description: "Request official documents, permits, and utility connections including certifications and electrical service authorization"
     },
     {
       title: "Environment",
+      path: '#',
       description: "Access environmental protection and waste management services"
     },
     {
       title: "Health and Food Services",
+      path: '#',
       description: "Healthcare services and regulatory standards for food, medicine, and pharmaceutical products"
     },
     {
       title: "Housing, Land and Local Services",
+      path: '#',
       description: "Handle property registration and tenancy matters"
     },
     {
       title: "Money and Finance",
+      path: '/services/gra',
       description: "Manage various tax obligations"
     },
     
     {
       title: "Police, Justice and Safety",
+      path: '#',
       description: "Contact law enforcement agencies, initiate legal proceedings, or get in touch with security services"
     },
     {
       title: "Social Services and Welfare",
+      path: '#',
       description: "Encompasses government assistance programs and support initiatives provided by the Government of Ghana"
     },
     {
       title: "Visas and Immigration",
+      path: '#',
       description: "Handle residence and work permits"
     },
     {
       title: "Working, Employment and Pensions",
+      path: '#',
       description: "Manage retirement benefits"
     },
     {
         title: "Other",
+        path: '#',
         description: "Access additional government services"
       },
 ]

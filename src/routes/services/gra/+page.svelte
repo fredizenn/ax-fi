@@ -10,7 +10,7 @@
 
 	let showPanel = false;
   let breadCrumbsOptions: any = [
-		{ id: 1, label: 'Services', path: '/' },
+		{ id: 1, label: 'Services', path: '/services' },
 		{ id: 2, label: 'GRA', path: '/services/gra' }
 	];
 
@@ -177,7 +177,7 @@
 <div class="w-full flex justify-center sm:justify-end">
   <Button
   on:click={() => togglePanel()}
-  class="z-40 cursor-pointer mt-6 rounded-sm bg-green-800"
+  class="z-40 cursor-pointer mt-6 rounded-sm bg-indigo-600"
   >File &amp; Pay Taxes</Button
 >
 </div>
