@@ -10,6 +10,7 @@
 	export let signInWithEmail = true;
     export let loading = false;
 	const init = {
+		email: '',
 		phoneNumber: '',
 		applicationNumber: ''
 	};
@@ -34,6 +35,9 @@
         }, 2000)
 		return true;
 	};
+
+
+	$: console.log(signInWithEmail)
 	// function subm
 </script>
 

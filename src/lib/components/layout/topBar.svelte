@@ -34,7 +34,7 @@
 				<NavLi href="/about/">About</NavLi>
 				<NavLi href="/services/">Services</NavLi>
 				<NavLi href="/application-status/">Track Application Status</NavLi>
-				<NavLi href="#">Feedback</NavLi>
+				<NavLi href="/feedback/">Feedback</NavLi>
 			</NavUl>
 		</div>
 		<div class="hidden md:flex items-center text-sm gap-x-4 mr-6">	

@@ -11,7 +11,7 @@
     async function getApplication () {
         loading = true;
         setTimeout(async() => {
-            await trackApplication(applicationId, extractQueryParam('phoneNumber'))
+            await trackApplication(applicationId, extractQueryParam(window.location.search, 'phoneNumber'))
             loading = false;
         }, 2000)
     }

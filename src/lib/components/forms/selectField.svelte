@@ -48,8 +48,9 @@
 	}
 </script>
 
+
 <fieldset class="flex flex-col gap-2 relative">
-	<label for={id} class=" text-gray-600 dark:text-white" class:hidden={!label}>
+	<label for={id} class=" text-gray-400 text-sm dark:text-white" class:hidden={!label}>
 		{label}
 		{#if required}
 			<span class="text-red-500 pl-1">*</span>
@@ -72,6 +73,7 @@
 		on:change
 		{...$$restProps}
 	/>
+	<div class="min-h-8">
 	{#if hasError}
 		<label
 			for={id}
@@ -89,4 +91,5 @@
 			/>
 		</label>
 	{/if}
+</div>
 </fieldset>
