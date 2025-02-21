@@ -24,7 +24,7 @@
 	let { children } = $props();
 </script>
 
-<div class="relative isolate h-96 overflow-hidden">
+<div class="relative isolate h-24 sm:h-96 overflow-hidden">
 	<div class="absolute inset-0 -z-10 size-full bg-gray-900" aria-hidden="true">
 		<img
 			src={arch}
