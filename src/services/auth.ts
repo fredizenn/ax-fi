@@ -1,3 +1,4 @@
+import { authenticated } from '$lib/stores/authStore';
 import type { IUserInfo } from '$lib/types';
 import { writable } from 'svelte/store';
 
@@ -145,6 +146,7 @@ export function refreshToken() {
 }
 
 export function logout() {
+	authenticated.set(false)
 	// if (!initialized) return;
 	// keycloak.logout();
 }

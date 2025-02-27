@@ -3,6 +3,8 @@
 	import Form from '$lib/components/forms/form.svelte';
 	import TextField from '$lib/components/forms/textField.svelte';
 	import Button from '$lib/components/ui/button.svelte';
+	import { authenticated } from '$lib/stores/authStore';
+	// import { authenticated } from '$lib/stores/authStore';
 	import { login } from '$svc/auth';
 	// import { Button } from 'flowbite-svelte';
 	import { z } from 'zod';
@@ -29,6 +31,7 @@
         loading = true
         setTimeout(() => {
             login({detail})
+			authenticated.set(true)
             goto('/dashboard')
             loading = false
 

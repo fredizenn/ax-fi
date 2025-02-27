@@ -42,7 +42,7 @@
           <div class="overflow-hidden rounded-sm  ring-1 ring-white/15">
             <!-- <img class="h-80 object-cover object-left" src="https://tailwindui.com/plus-assets/img/component-images/bento-02-releases.png" alt=""> -->
             <div class="p-10">
-              <h3 class="text-sm/4 font-semibold text-gray-400">Releases</h3>
+              <h3 class="text-sm/4 font-semibold text-gray-400">Tax Bill Details</h3>
               <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus egestas sem pellentesque.</p>
             </div>
           </div>
@@ -63,9 +63,9 @@
                                       Mobile Money
                                     </div>
                                 </div>
-                                  <p class="mt-1 flex text-xs/5 text-gray-500">
-                                    <a href="mailto:leslie.alexander@example.com" class="relative truncate hover:underline">Pay via mobile money</a>
-                                  </p>
+                                  <div class="mt-1 flex text-xs/5 text-gray-500">
+                                    <p class="relative truncate hover:underline">Pay via mobile money</p>
+                                  </div>
                                 </div>
                               </div>
                               <div class="flex shrink-0 items-center gap-x-4">
@@ -92,9 +92,9 @@
                                         Bank deposit
                                       </div>
                                   </div>
-                                    <p class="mt-1 flex text-xs/5 text-gray-500">
-                                      <a href="mailto:leslie.alexander@example.com" class="relative truncate hover:underline">Pay at the bank</a>
-                                    </p>
+                                    <div class="mt-1 flex text-xs/5 text-gray-500">
+                                      <div class="relative truncate hover:underline">Pay at the bank</div>
+                                    </div>
                                   </div>
                                 </div>
                                 <!-- <div class="flex shrink-0 items-center gap-x-4">
@@ -114,9 +114,9 @@
                                         QR Code
                                       </div>
                                   </div>
-                                    <p class="mt-1 flex text-xs/5 text-gray-500">
-                                      <a href="mailto:leslie.alexander@example.com" class="relative truncate hover:underline">Scan a QR Code</a>
-                                    </p>
+                                    <div class="mt-1 flex text-xs/5 text-gray-500">
+                                      <div class="relative truncate hover:underline">Scan a QR Code</div>
+                                    </div>
                                   </div>
                                 </div>
                                 <!-- <div class="flex shrink-0 items-center gap-x-4">
@@ -136,7 +136,7 @@
   <!-- </div> -->
   
 <div class="fixed z-[3100]">
-<Modal title="Scan QR Code" class="" open={showModal} on:close={() => dispatch('cancel')} size="sm">
+<Modal title="Scan QR Code" class="" bind:open={showModal} on:close={() => dispatch('cancel')} size="sm">
     
 	<div class="p-10 mx-auto ">
         {#if loadingQrCode}

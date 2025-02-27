@@ -4,7 +4,9 @@
 	import TextField from '$lib/components/forms/textField.svelte';
 	import Button from '$lib/components/ui/button.svelte';
 	import Loader from '$lib/components/ui/loader.svelte';
+	import { authenticated } from '$lib/stores/authStore';
 	import { verifyPhoneNumber } from '$svc/auth';
+	// import { authenticated } from '$lib/stores/authStore';
 	import { z } from 'zod';
 
 	const schema = z.object({
@@ -17,6 +19,7 @@
 		loading = true;
 		setTimeout(async () => {
 			await verifyPhoneNumber(detail.values.otp);
+			authenticated.set(true);
 			goto('/dashboard');
 			loading = false;
 		}, 2000);
