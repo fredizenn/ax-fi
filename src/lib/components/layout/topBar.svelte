@@ -18,23 +18,23 @@
 
 	let dropDownMenu: any = [
 
-	// {
-	// 		label: 'Profile',
-	// 		path: '/profile',
-	// 		icon: 'mdi:invite',
-	// 		permission: '',
-	// 		onClick: () => goto('/profile')
-	// 	},
+	{
+			label: 'Dashboard',
+			path: '/dashboard',
+			icon: 'mage:dashboard-2',
+			permission: '',
+			onClick: () => goto('/dashboard')
+		},
 		{
-			label: 'Wallet',
-			path: '/wallet',
+			label: 'Calendar',
+			path: '/calendar',
 			icon: 'mdi-light:wallet',
 			permission: '',
-			onClick: () => goto('/wallet')
+			onClick: () => goto('/calendar')
 		},
 		{
 			label: 'Settings',
-			icon: 'circum:settings',
+			icon: 'fluent:settings-32-regular',
 			permission: '',
 			onClick: () => goto('/settings')
 		},
@@ -42,7 +42,7 @@
 
 		{
 			label: 'Logout',
-			icon: 'material-symbols-light:logout-rounded',
+			icon: 'material-symbols:logout-rounded',
 			onClick: () => logout(),
 		}
 	];

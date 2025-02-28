@@ -4,6 +4,8 @@
 	import { dashboardData } from "$svc/dashboard";
 	import { onMount } from "svelte";
     import Loader from '$lib/components/ui/loader.svelte';
+	import { P } from "flowbite-svelte";
+	import { goto } from "$app/navigation";
     let loading = false;
     let data = [
         {
@@ -12,6 +14,7 @@
             title: 'Tax filing',
             description: 'Bills',
             invoiceNumber: '00012',
+            
         },
         {
             amount: 8000,
@@ -76,7 +79,7 @@
             <a href="#" class="text-gray-700">All-time</a>
           </div>
           
-          <Button leadingIcon="ic:round-plus" otherClasses="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <Button on:click={() => goto('/services/')} leadingIcon="ic:round-plus" otherClasses="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             New Invoice
           </Button>
         </div>
@@ -146,7 +149,7 @@
                     </td>
                     <td class="py-5 text-right">
                       <div class="flex justify-end">
-                        <a href="#" class="text-sm/6 font-medium text-indigo-600 hover:text-indigo-500">View<span class="hidden sm:inline ml-1"> transaction</span><span class="sr-only">, invoice #00012, Reform</span></a>
+                        <a href={`/dashboard/transaction/${d.invoiceNumber}`} class="text-sm/6 font-medium text-indigo-600 hover:text-indigo-500">View<span class="hidden sm:inline ml-1"> transaction</span><span class="sr-only">, invoice #00012, Reform</span></a>
                       </div>
                       <div class="mt-1 text-xs/5 text-gray-500">Invoice <span class="text-gray-900">#{d.invoiceNumber}</span></div>
                     </td>

@@ -11,7 +11,7 @@
       time: string;
       datetime: string; // ISO format
       name: string;
-      location: string;
+      mode: string;
     }
   
     // Sample initial data
@@ -21,8 +21,8 @@
         date: '2022-01-10',
         time: '5:00 PM',
         datetime: '2022-01-10T17:00',
-        name: 'Leslie Alexander',
-        location: 'Starbucks',
+        name: 'Tax Bill',
+        mode: 'MTN Mobile Money',
       },
     ];
   
@@ -99,7 +99,7 @@
                     <span class="sr-only">Location</span>
                     <Icon icon="heroicons:map-pin" class="size-5 text-gray-400" aria-hidden="true" />
                   </dt>
-                  <dd>{meeting.location}</dd>
+                  <dd>Via {meeting.mode}</dd>
                 </div>
               </dl>
             </div>
